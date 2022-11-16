@@ -1,14 +1,15 @@
 import '../styles/globals.css'
+import { clsx } from 'clsx'
 
 import type { AppProps } from 'next/app'
 
-import { AppProvider } from '@/providers'
-
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <AppProvider>
-      <Component {...pageProps} />
-    </AppProvider>
+    <main>
+      <div className={clsx('tw-mx-auto', 'tw-w-full tw-max-w-[800px]')}>
+        <Component {...pageProps} />
+      </div>
+    </main>
   )
 }
 
